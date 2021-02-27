@@ -1,13 +1,18 @@
 package com.gang5.config.limitservices.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties("limits-service")
+@Configuration
+@ConfigurationProperties("limits")
+
 public class ConfigurationProps {
-	 int maximum;
-	 public int getMaximum() {
+	private int maximum;
+	private	 int minimum;
+	
+	public int getMaximum() {
 		return maximum;
 	}
 	public void setMaximum(int maximum) {
@@ -19,7 +24,7 @@ public class ConfigurationProps {
 	public void setMinimum(int minimum) {
 		this.minimum = minimum;
 	}
-	int minimum;
+	
 	
 	
 	
